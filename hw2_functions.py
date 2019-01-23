@@ -3,7 +3,7 @@
 
 # FILL THESE COMMENTS IN
 #*****************************************
-# YOUR NAME:Nicolas
+# YOUR NAME:Nicolas Ragusa
 # NUMBER OF HOURS TO COMPLETE:  (please track how long this homework takes you to complete).
 # YOUR COLLABORATION STATEMENT(s) (refer to syllabus):
 #
