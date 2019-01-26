@@ -63,7 +63,7 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
 
 
-    area = 1/4*math.sqrt((
+    area =
     return area
 
 
