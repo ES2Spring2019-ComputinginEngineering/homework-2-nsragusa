@@ -20,7 +20,8 @@
 
 #Please complete the four required functions below:
 
-import math #This line allows you to use math functions. Importantly, math.sqrt(#) which will produce the square root of the number inside the parentheses.
+import math #This line allows you to use math functions. Importantly, math.sqrt(#) which will produce
+#            the square root of the number inside the parentheses.
 
 
 def intersectionoftwolines_x(m1, b1, m2, b2):
@@ -28,7 +29,7 @@ def intersectionoftwolines_x(m1, b1, m2, b2):
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
 
-    x = 0 #replace this with your calculation for x
+    x = (b2-b1)/(m1-m2)
     return x
 
 def intersectionoftwolines_y(m1, b1, m2, b2):
@@ -36,7 +37,7 @@ def intersectionoftwolines_y(m1, b1, m2, b2):
     # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
 
-    y = 0 #replace this with your calculation for y
+    y = ((-m1*b2)+(m2*b1))/(m2-m1)
     return y
 
 
@@ -45,7 +46,7 @@ def distancebetweenpoints(x1, y1, x2, y2):
     # (x1, y1) and (x2, y2).
 
 
-    distance = 0 # replace with your calculation for distance
+    distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
     return distance
 
 def heronsformula(a, b, c):
@@ -53,8 +54,7 @@ def heronsformula(a, b, c):
     # You may want to look up Heron's formula online.
 
 
-
-    area = 0 #replace this with your calculation for area
+    area = 1/4*math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b-a+c))
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
@@ -63,7 +63,7 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
 
 
-    area = 0 #replace this with your calculation for area
+    area = 1/4*math.sqrt((
     return area
 
 
