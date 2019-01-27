@@ -61,10 +61,29 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #Using the three functions above, now calculate the area of a
     #triangle when the three sides are described by three linear equations
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
-
-
-    area =
-    return area
+    if m1 == m2:
+        print('No intersection - Lines are parallel')
+    else:
+        if m2 == m3:
+            print('No intersection - Lines are parallel')
+        else:
+            if m3 == m1:
+                print('No intersection - Lines are parallel')
+            else:
+                x1 = (b2-b1)/(m1-m2) #these (x1...y3) calculate the respective x and y coordinates of the vertices of the triangle
+                y1 = ((-m1*b2)+(m2*b1))/(m2-m1)
+                x2 = (b3-b1)/(m1-m3)
+                y2 = ((-m1*b3)+(m3*b1))/(m3-m1)
+                x3 = (b2-b3)/(m3-m2)
+                y3 = ((-m3*b2)+(m2*b3))/(m2-m3)
+                if x1 == x2 == x3 and y1 == y2 == y3:
+                    print('No triangle - All three lines intersect at the same point')
+                else:
+                    a = math.sqrt((x2-x1)**2+(y2-y1)**2)  #these calculations (a,b,c) calculte the side length of the respective side of the triangle
+                    b = math.sqrt((x3-x2)**2+(y3-y2)**2)
+                    c = math.sqrt((x1-x3)**2+(y1-y3)**2)
+                    area = 1/4*math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b-a+c))
+                    return area
 
 
 #TEST CASES
@@ -93,4 +112,4 @@ print("Area of a Triangle:")
 #If these are both true, it is likely that your function is working.
 print(round(areaofatriangle(10, 10, 20, 0, 30, 0),2) == 2.5)
 print(round(areaofatriangle(0, 0, 1, 0, -1, 10),2) == 25)
-print("*********")
+print("********")
