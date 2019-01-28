@@ -70,19 +70,19 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
             if m3 == m1:
                 print('No intersection - Lines are parallel')
             else:
-                x1 = (b2-b1)/(m1-m2) #these (x1...y3) calculate the respective x and y coordinates of the vertices of the triangle
-                y1 = ((-m1*b2)+(m2*b1))/(m2-m1)
-                x2 = (b3-b1)/(m1-m3)
-                y2 = ((-m1*b3)+(m3*b1))/(m3-m1)
-                x3 = (b2-b3)/(m3-m2)
-                y3 = ((-m3*b2)+(m2*b3))/(m2-m3)
+                x1 = intersectionoftwolines_x(m1, b1, m2, b2) #these (x1...y3) calculate the respective x and y coordinates of the vertices of the triangle
+                y1 = intersectionoftwolines_y(m1, b1, m2, b2)
+                x2 = intersectionoftwolines_x(m1, b1, m3, b3)
+                y2 = intersectionoftwolines_y(m1, b1, m3, b3)
+                x3 = intersectionoftwolines_x(m3, b3, m2, b2)
+                y3 = intersectionoftwolines_y(m3, b3, m2, b2)
                 if x1 == x2 == x3 and y1 == y2 == y3:
                     print('No triangle - All three lines intersect at the same point')
                 else:
-                    a = math.sqrt((x2-x1)**2+(y2-y1)**2)  #these calculations (a,b,c) calculte the side length of the respective side of the triangle
-                    b = math.sqrt((x3-x2)**2+(y3-y2)**2)
-                    c = math.sqrt((x1-x3)**2+(y1-y3)**2)
-                    area = 1/4*math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b-a+c))
+                    a = distancebetweenpoints(x1, y1, x2, y2)  #these calculations (a,b,c) calculte the side length of the respective side of the triangle
+                    b = distancebetweenpoints(x3, y3, x2, y2)
+                    c = distancebetweenpoints(x1, y1, x3, y3)
+                    area = heronsformula(a, b, c)
                     return area
 
 
