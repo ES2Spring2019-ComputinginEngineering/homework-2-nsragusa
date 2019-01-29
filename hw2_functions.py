@@ -62,13 +62,13 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
     #triangle when the three sides are described by three linear equations
     #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
     if m1 == m2:
-        print('No intersection - Lines are parallel')
+        return('No intersection - Lines are parallel')
     else:
         if m2 == m3:
-            print('No intersection - Lines are parallel')
+            return('No intersection - Lines are parallel')
         else:
             if m3 == m1:
-                print('No intersection - Lines are parallel')
+                return('No intersection - Lines are parallel')
             else:
                 x1 = intersectionoftwolines_x(m1, b1, m2, b2) #these (x1...y3) calculate the respective x and y coordinates of the vertices of the triangle
                 y1 = intersectionoftwolines_y(m1, b1, m2, b2)
@@ -77,7 +77,7 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
                 x3 = intersectionoftwolines_x(m3, b3, m2, b2)
                 y3 = intersectionoftwolines_y(m3, b3, m2, b2)
                 if x1 == x2 == x3 and y1 == y2 == y3:
-                    print('No triangle - All three lines intersect at the same point')
+                    return('No triangle - All three lines intersect at the same point')
                 else:
                     a = distancebetweenpoints(x1, y1, x2, y2)  #these calculations (a,b,c) calculte the side length of the respective side of the triangle
                     b = distancebetweenpoints(x3, y3, x2, y2)
