@@ -20,7 +20,7 @@
 
 #Please complete the four required functions below:
 
-import math #This line allows you to use math functions. Importantly, math.sqrt(#) which will produce
+import math as m #This line allows you to use math functions. Importantly, math.sqrt(#) which will produce
 #            the square root of the number inside the parentheses.
 
 
@@ -46,7 +46,7 @@ def distancebetweenpoints(x1, y1, x2, y2):
     # (x1, y1) and (x2, y2).
 
 
-    distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
+    distance = m.sqrt((x2-x1)**2+(y2-y1)**2)
     return distance
 
 def heronsformula(a, b, c):
@@ -54,7 +54,7 @@ def heronsformula(a, b, c):
     # You may want to look up Heron's formula online.
 
 
-    area = 1/4*math.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b-a+c))
+    area = 1/4*m.sqrt((a+b+c)*(a+b-c)*(a-b+c)*(b-a+c))
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
@@ -92,7 +92,7 @@ def areaofatriangle(m1, b1, m2, b2, m3, b3):
 print("Distance between Points:")
 #If these are both true, it is likely that your function is working.
 print(distancebetweenpoints(0, 0, 3, 4) == 5)
-print(distancebetweenpoints(0, 0, 1, 1) == math.sqrt(2))
+print(distancebetweenpoints(0, 0, 1, 1) == m.sqrt(2))
 print("*********")
 
 print("Intersection of Two Lines:")
